@@ -1,0 +1,494 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		662C52711C797E50009A19BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C52701C797E50009A19BA /* AppDelegate.swift */; };
+		662C52731C797E50009A19BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662C52721C797E50009A19BA /* Assets.xcassets */; };
+		662C52761C797E50009A19BA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 662C52741C797E50009A19BA /* MainMenu.xib */; };
+		662C52811C797E50009A19BA /* musicBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C52801C797E50009A19BA /* musicBarTests.swift */; };
+		662C528C1C797E50009A19BA /* musicBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C528B1C797E50009A19BA /* musicBarUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		662C527D1C797E50009A19BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 662C52651C797E50009A19BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 662C526C1C797E50009A19BA;
+			remoteInfo = musicBar;
+		};
+		662C52881C797E50009A19BA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 662C52651C797E50009A19BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 662C526C1C797E50009A19BA;
+			remoteInfo = musicBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		662C526D1C797E50009A19BA /* musicBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musicBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		662C52701C797E50009A19BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		662C52721C797E50009A19BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		662C52751C797E50009A19BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		662C52771C797E50009A19BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		662C527C1C797E50009A19BA /* musicBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musicBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		662C52801C797E50009A19BA /* musicBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicBarTests.swift; sourceTree = "<group>"; };
+		662C52821C797E50009A19BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		662C52871C797E50009A19BA /* musicBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musicBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		662C528B1C797E50009A19BA /* musicBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musicBarUITests.swift; sourceTree = "<group>"; };
+		662C528D1C797E50009A19BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		662C526A1C797E50009A19BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662C52791C797E50009A19BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662C52841C797E50009A19BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		662C52641C797E50009A19BA = {
+			isa = PBXGroup;
+			children = (
+				662C526F1C797E50009A19BA /* musicBar */,
+				662C527F1C797E50009A19BA /* musicBarTests */,
+				662C528A1C797E50009A19BA /* musicBarUITests */,
+				662C526E1C797E50009A19BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		662C526E1C797E50009A19BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				662C526D1C797E50009A19BA /* musicBar.app */,
+				662C527C1C797E50009A19BA /* musicBarTests.xctest */,
+				662C52871C797E50009A19BA /* musicBarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		662C526F1C797E50009A19BA /* musicBar */ = {
+			isa = PBXGroup;
+			children = (
+				662C52701C797E50009A19BA /* AppDelegate.swift */,
+				662C52721C797E50009A19BA /* Assets.xcassets */,
+				662C52741C797E50009A19BA /* MainMenu.xib */,
+				662C52771C797E50009A19BA /* Info.plist */,
+			);
+			path = musicBar;
+			sourceTree = "<group>";
+		};
+		662C527F1C797E50009A19BA /* musicBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				662C52801C797E50009A19BA /* musicBarTests.swift */,
+				662C52821C797E50009A19BA /* Info.plist */,
+			);
+			path = musicBarTests;
+			sourceTree = "<group>";
+		};
+		662C528A1C797E50009A19BA /* musicBarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				662C528B1C797E50009A19BA /* musicBarUITests.swift */,
+				662C528D1C797E50009A19BA /* Info.plist */,
+			);
+			path = musicBarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		662C526C1C797E50009A19BA /* musicBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662C52901C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBar" */;
+			buildPhases = (
+				662C52691C797E50009A19BA /* Sources */,
+				662C526A1C797E50009A19BA /* Frameworks */,
+				662C526B1C797E50009A19BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = musicBar;
+			productName = musicBar;
+			productReference = 662C526D1C797E50009A19BA /* musicBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		662C527B1C797E50009A19BA /* musicBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662C52931C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBarTests" */;
+			buildPhases = (
+				662C52781C797E50009A19BA /* Sources */,
+				662C52791C797E50009A19BA /* Frameworks */,
+				662C527A1C797E50009A19BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				662C527E1C797E50009A19BA /* PBXTargetDependency */,
+			);
+			name = musicBarTests;
+			productName = musicBarTests;
+			productReference = 662C527C1C797E50009A19BA /* musicBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		662C52861C797E50009A19BA /* musicBarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 662C52961C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBarUITests" */;
+			buildPhases = (
+				662C52831C797E50009A19BA /* Sources */,
+				662C52841C797E50009A19BA /* Frameworks */,
+				662C52851C797E50009A19BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				662C52891C797E50009A19BA /* PBXTargetDependency */,
+			);
+			name = musicBarUITests;
+			productName = musicBarUITests;
+			productReference = 662C52871C797E50009A19BA /* musicBarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		662C52651C797E50009A19BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Daniel Ma";
+				TargetAttributes = {
+					662C526C1C797E50009A19BA = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					662C527B1C797E50009A19BA = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 662C526C1C797E50009A19BA;
+					};
+					662C52861C797E50009A19BA = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 662C526C1C797E50009A19BA;
+					};
+				};
+			};
+			buildConfigurationList = 662C52681C797E50009A19BA /* Build configuration list for PBXProject "musicBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 662C52641C797E50009A19BA;
+			productRefGroup = 662C526E1C797E50009A19BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				662C526C1C797E50009A19BA /* musicBar */,
+				662C527B1C797E50009A19BA /* musicBarTests */,
+				662C52861C797E50009A19BA /* musicBarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		662C526B1C797E50009A19BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662C52731C797E50009A19BA /* Assets.xcassets in Resources */,
+				662C52761C797E50009A19BA /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662C527A1C797E50009A19BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662C52851C797E50009A19BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		662C52691C797E50009A19BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662C52711C797E50009A19BA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662C52781C797E50009A19BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662C52811C797E50009A19BA /* musicBarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		662C52831C797E50009A19BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662C528C1C797E50009A19BA /* musicBarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		662C527E1C797E50009A19BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 662C526C1C797E50009A19BA /* musicBar */;
+			targetProxy = 662C527D1C797E50009A19BA /* PBXContainerItemProxy */;
+		};
+		662C52891C797E50009A19BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 662C526C1C797E50009A19BA /* musicBar */;
+			targetProxy = 662C52881C797E50009A19BA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		662C52741C797E50009A19BA /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				662C52751C797E50009A19BA /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		662C528E1C797E50009A19BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		662C528F1C797E50009A19BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		662C52911C797E50009A19BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = musicBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		662C52921C797E50009A19BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = musicBar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		662C52941C797E50009A19BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = musicBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/musicBar.app/Contents/MacOS/musicBar";
+			};
+			name = Debug;
+		};
+		662C52951C797E50009A19BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = musicBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/musicBar.app/Contents/MacOS/musicBar";
+			};
+			name = Release;
+		};
+		662C52971C797E50009A19BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = musicBarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = musicBar;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		662C52981C797E50009A19BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = musicBarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = musicBar;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		662C52681C797E50009A19BA /* Build configuration list for PBXProject "musicBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662C528E1C797E50009A19BA /* Debug */,
+				662C528F1C797E50009A19BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		662C52901C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662C52911C797E50009A19BA /* Debug */,
+				662C52921C797E50009A19BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		662C52931C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662C52941C797E50009A19BA /* Debug */,
+				662C52951C797E50009A19BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		662C52961C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				662C52971C797E50009A19BA /* Debug */,
+				662C52981C797E50009A19BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 662C52651C797E50009A19BA /* Project object */;
+}
