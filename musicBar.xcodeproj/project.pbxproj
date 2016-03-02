@@ -383,6 +383,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = musicBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -395,6 +396,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = musicBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = danielma.musicBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -471,6 +473,7 @@
 				662C52921C797E50009A19BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		662C52931C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBarTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +482,7 @@
 				662C52951C797E50009A19BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		662C52961C797E50009A19BA /* Build configuration list for PBXNativeTarget "musicBarUITests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +491,7 @@
 				662C52981C797E50009A19BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
