@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
 
   func updateStatusFileWithTrackInfo(info: TrackInfo) {
-    let str = playerText(info)
+    let str = "\(playerText(info))\n"
     
     // get URL to the the documents directory in the sandbox
     // write to it
