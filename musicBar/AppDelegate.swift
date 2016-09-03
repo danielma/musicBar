@@ -15,17 +15,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
   let menu = NSMenu()
+  static let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.MusicDirectory, inDomains: .UserDomainMask)[0] as NSURL
+  static let fileUrl = documentsUrl.URLByAppendingPathComponent(".musicBar")
   var currentTrack = TrackInfo(album: "", artist: "", track: "", playerState: "")
+
   
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     let dnc = NSDistributedNotificationCenter.defaultCenter()
-    dnc.addObserver(self, selector: Selector("updateTrackInfo:"), name: "com.apple.iTunes.playerInfo", object: nil)
+    dnc.addObserver(self, selector: #selector(updateTrackInfo(_:)), name: "com.apple.iTunes.playerInfo", object: nil)
     
     menu.addItem(NSMenuItem(title: "", action: nil, keyEquivalent: ""))
-    menu.addItem(NSMenuItem(title: "Open iTunes", action: Selector("openItunes:"), keyEquivalent: "o"))
-    menu.addItem(NSMenuItem(title: "Lookup lyrics on Genius.com", action: Selector("searchGenius:"), keyEquivalent: "l"))
+    menu.addItem(NSMenuItem(title: "Open iTunes", action: #selector(openItunes(_:)), keyEquivalent: "o"))
+    menu.addItem(NSMenuItem(title: "Lookup lyrics on Genius.com", action: #selector(searchGenius(_:)), keyEquivalent: "l"))
     menu.addItem(NSMenuItem.separatorItem())
-    menu.addItem(NSMenuItem(title: "Quit", action: Selector("terminate:"), keyEquivalent: "q"))
+    menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q"))
     
     statusItem.menu = menu
   }
@@ -51,25 +54,42 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   }
   
   func updateTrackInfo(notification: NSNotification) {
-    if let information = notification.userInfo {
-      let album = getFromAnything(information, key: "Album")
-      let track = getFromAnything(information, key: "Name")
-      let artist = getFromAnything(information, key: "Artist")
-      let playerState = getFromAnything(information, key: "Player State")
-      
-      // print("notification: \(information)")
-      
-      let trackInfo = TrackInfo(album: album, artist: artist, track: track, playerState: playerState)
-      currentTrack = trackInfo
-      updateMenuTextWithTrackInfo(trackInfo)
-      updateMenuItemsWithTrackInfo(trackInfo)
+    guard let information = notification.userInfo else { return }
+
+    let album = getFromAnything(information, key: "Album")
+    let track = getFromAnything(information, key: "Name")
+    let artist = getFromAnything(information, key: "Artist")
+    let playerState = getFromAnything(information, key: "Player State")
+    
+    // print("notification: \(information)")
+    
+    let trackInfo = TrackInfo(album: album, artist: artist, track: track, playerState: playerState)
+    currentTrack = trackInfo
+    updateMenuTextWithTrackInfo(trackInfo)
+    updateMenuItemsWithTrackInfo(trackInfo)
+    updateStatusFileWithTrackInfo(trackInfo)
+  }
+
+  func updateStatusFileWithTrackInfo(info: TrackInfo) {
+    let str = playerText(info)
+    
+    // get URL to the the documents directory in the sandbox
+    // write to it
+    do {
+      try str.writeToURL(AppDelegate.fileUrl, atomically: false, encoding: NSUTF8StringEncoding)
+    } catch {
+      // whatever
     }
+  }
+
+  func playerText(info: TrackInfo) -> String {
+    let statusIcon = info.playerState == "Playing" ? "▶" : "❚❚"
+    return "\(statusIcon) \(info.track) - \(info.artist)"
   }
   
   func updateMenuTextWithTrackInfo(info: TrackInfo) {
     if let button = statusItem.button {
-      let statusIcon = info.playerState == "Playing" ? "▶" : "❚❚"
-      button.title = "\(statusIcon) \(info.track) - \(info.artist)"
+      button.title = playerText(info)
     }
   }
   
