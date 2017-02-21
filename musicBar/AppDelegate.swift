@@ -13,39 +13,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   @IBOutlet weak var window: NSWindow!
   
-  let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
+  let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
   let menu = NSMenu()
-  static let documentsUrl = NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.MusicDirectory, inDomains: .UserDomainMask)[0] as NSURL
-  static let fileUrl = documentsUrl.URLByAppendingPathComponent(".musicBar")
+  static let documentsUrl = FileManager.default.urls(for: FileManager.SearchPathDirectory.musicDirectory, in: .userDomainMask)[0] as URL
+  static let fileUrl = documentsUrl.appendingPathComponent(".musicBar")
   var currentTrack = TrackInfo(album: "", artist: "", track: "", playerState: "")
 
   
-  func applicationDidFinishLaunching(aNotification: NSNotification) {
-    let dnc = NSDistributedNotificationCenter.defaultCenter()
-    dnc.addObserver(self, selector: #selector(updateTrackInfo(_:)), name: "com.apple.iTunes.playerInfo", object: nil)
+  func applicationDidFinishLaunching(_ aNotification: Notification) {
+    let dnc = DistributedNotificationCenter.default()
+    dnc.addObserver(self, selector: #selector(updateTrackInfo(_:)), name: NSNotification.Name(rawValue: "com.apple.iTunes.playerInfo"), object: nil)
+    dnc.addObserver(self, selector: #selector(updateTrackInfo(_:)), name: NSNotification.Name(rawValue: "com.spotify.client.PlaybackStateChanged"), object: nil)
     
     menu.addItem(NSMenuItem(title: "", action: nil, keyEquivalent: ""))
     menu.addItem(NSMenuItem(title: "Open iTunes", action: #selector(openItunes(_:)), keyEquivalent: "o"))
     menu.addItem(NSMenuItem(title: "Lookup lyrics on Genius.com", action: #selector(searchGenius(_:)), keyEquivalent: "l"))
-    menu.addItem(NSMenuItem.separatorItem())
+    menu.addItem(NSMenuItem.separator())
     menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q"))
     
     statusItem.menu = menu
   }
   
-  func applicationWillTerminate(aNotification: NSNotification) {
-    let dnc = NSDistributedNotificationCenter.defaultCenter()
-    dnc.removeObserver(self, name: "com.apple.iTunes.playerInfo", object: nil)
+  func applicationWillTerminate(_ aNotification: Notification) {
+    let dnc = DistributedNotificationCenter.default()
+    dnc.removeObserver(self, name: NSNotification.Name(rawValue: "com.apple.iTunes.playerInfo"), object: nil)
+    dnc.removeObserver(self, name: NSNotification.Name(rawValue: "com.spotify.client.PlaybackStateChanged"), object: nil)
   }
   
-  func printQuote(sender: AnyObject) {
+  func printQuote(_ sender: AnyObject) {
     let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
     let quoteAuthor = "Mark Twain"
     
     print("\(quoteText) — \(quoteAuthor)")
   }
   
-  func getFromAnything(anyObject: [NSObject : AnyObject], key: String) -> String {
+  func getFromAnything(_ anyObject: [AnyHashable: Any], key: String) -> String {
     let maybeValue = anyObject[key]
     
     if maybeValue == nil { return "" }
@@ -53,7 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return maybeValue as! String
   }
   
-  func updateTrackInfo(notification: NSNotification) {
+  func updateTrackInfo(_ notification: Notification) {
+    print(notification)
     guard let information = notification.userInfo else { return }
 
     let album = getFromAnything(information, key: "Album")
@@ -70,45 +73,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     updateStatusFileWithTrackInfo(trackInfo)
   }
 
-  func updateStatusFileWithTrackInfo(info: TrackInfo) {
+  func updateStatusFileWithTrackInfo(_ info: TrackInfo) {
     let str = "\(playerText(info))\n"
     
     // get URL to the the documents directory in the sandbox
     // write to it
     do {
-      try str.writeToURL(AppDelegate.fileUrl, atomically: false, encoding: NSUTF8StringEncoding)
+      try str.write(to: AppDelegate.fileUrl, atomically: false, encoding: String.Encoding.utf8)
     } catch {
       // whatever
     }
   }
 
-  func playerText(info: TrackInfo) -> String {
+  func playerText(_ info: TrackInfo) -> String {
     let statusIcon = info.playerState == "Playing" ? "▶" : "❚❚"
     return "\(statusIcon) \(info.track) - \(info.artist)"
   }
   
-  func updateMenuTextWithTrackInfo(info: TrackInfo) {
+  func updateMenuTextWithTrackInfo(_ info: TrackInfo) {
     if let button = statusItem.button {
       button.title = playerText(info)
     }
   }
   
-  func updateMenuItemsWithTrackInfo(info: TrackInfo) {
-    menu.removeItemAtIndex(0)
-    menu.insertItem(NSMenuItem(title: "Album: \(info.album)", action: nil, keyEquivalent: ""), atIndex: 0)
+  func updateMenuItemsWithTrackInfo(_ info: TrackInfo) {
+    menu.removeItem(at: 0)
+    menu.insertItem(NSMenuItem(title: "Album: \(info.album)", action: nil, keyEquivalent: ""), at: 0)
   }
   
-  func openItunes(sender: AnyObject) {
-    NSWorkspace.sharedWorkspace().launchApplication("iTunes.app")
+  func openItunes(_ sender: AnyObject) {
+    NSWorkspace.shared().launchApplication("iTunes.app")
   }
 
-  func searchGenius(sender: AnyObject) {
-    let searchQuery = "\(currentTrack.track) \(currentTrack.artist)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+  func searchGenius(_ sender: AnyObject) {
+    let searchQuery = "\(currentTrack.track) \(currentTrack.artist)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
     if let searchQuery = searchQuery {
       let urlString = "https://duckduckgo.com/?q=!ducky+\(searchQuery)+site%3Agenius.com"
-      let url = NSURL(string: urlString)
+      let url = URL(string: urlString)
       if let unwrappedURL = url {
-        NSWorkspace.sharedWorkspace().openURL(unwrappedURL)
+        NSWorkspace.shared().open(unwrappedURL)
       }
     }
   }
