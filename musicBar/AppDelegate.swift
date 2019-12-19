@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   
   @IBOutlet weak var window: NSWindow!
   
-  let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
   let menu = NSMenu()
   static let documentsUrl = FileManager.default.urls(for: FileManager.SearchPathDirectory.musicDirectory, in: .userDomainMask)[0] as URL
   static let fileUrl = documentsUrl.appendingPathComponent(".musicBar")
@@ -55,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     return maybeValue as! String
   }
   
-  func updateTrackInfo(_ notification: Notification) {
+    @objc func updateTrackInfo(_ notification: Notification) {
     print(notification)
     guard let information = notification.userInfo else { return }
 
@@ -101,17 +101,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     menu.insertItem(NSMenuItem(title: "Album: \(info.album)", action: nil, keyEquivalent: ""), at: 0)
   }
   
-  func openItunes(_ sender: AnyObject) {
-    NSWorkspace.shared().launchApplication("iTunes.app")
+    @objc func openItunes(_ sender: AnyObject) {
+        NSWorkspace.shared.launchApplication("iTunes.app")
   }
 
-  func searchGenius(_ sender: AnyObject) {
+    @objc func searchGenius(_ sender: AnyObject) {
     let searchQuery = "\(currentTrack.track) \(currentTrack.artist)".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
     if let searchQuery = searchQuery {
       let urlString = "https://duckduckgo.com/?q=!ducky+\(searchQuery)+site%3Agenius.com"
       let url = URL(string: urlString)
       if let unwrappedURL = url {
-        NSWorkspace.shared().open(unwrappedURL)
+        NSWorkspace.shared.open(unwrappedURL)
       }
     }
   }
